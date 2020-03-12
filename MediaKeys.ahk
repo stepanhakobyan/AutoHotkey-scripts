@@ -3,6 +3,11 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+if not A_IsAdmin
+{
+  Run *RunAs "%A_ScriptFullPath%"
+  ExitApp
+}
 
 #Numpad8::Volume_Up
 #Numpad2::Volume_Down
